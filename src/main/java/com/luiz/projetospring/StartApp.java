@@ -5,8 +5,9 @@ import com.luiz.projetospring.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
 
-@ComponentScan
+@Component
 public class StartApp implements CommandLineRunner {
     @Autowired
     private UserRepository repository;
@@ -16,7 +17,12 @@ public class StartApp implements CommandLineRunner {
         User user = new User();
         user.setUsername("luiz");
         user.setPassword("luiz123");
+        user.setNome("Luiz Fernando");
 
-        repository.save();
+        repository.save(user);
+
+        for (User u : repository.findAll()) {
+
+        }
     }
 }
