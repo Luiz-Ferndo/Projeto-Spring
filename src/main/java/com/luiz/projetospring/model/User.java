@@ -10,17 +10,24 @@ public class User {
     @Column(name = "user_id")
     private Integer id;
     @Column(length = 50, nullable = false)
-    private String nome;
-    @Column(length = 20, nullable = false)
+    private String name;
+    @Column(length = 50, nullable = false)
     private String username;
     @Column(length = 100, nullable = false)
     private String password;
 
-    public String getNome() {
-        return nome;
+    public Integer getId() {
+        return id;
     }
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getUsername() {
@@ -41,7 +48,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", nome='" + nome + '\'' +
+                ", nome='" + name + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';
